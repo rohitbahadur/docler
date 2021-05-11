@@ -1,0 +1,14 @@
+{
+  "name": "docler",
+  "version": "1.0.0",
+  "description": "docler automation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rohit Bahadur",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^7.2.0"
+  }
+}
