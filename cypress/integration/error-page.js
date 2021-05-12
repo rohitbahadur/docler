@@ -1,17 +1,20 @@
+import HomePage_PO from '../support/page-object/automation-test-store/HomePage-PO'
+import FormPage_PO from '../support/page-object/automation-test-store/ErrorPage-PO';
+import ErrorPage_PO from '../support/page-object/automation-test-store/ErrorPage-PO';
 /// <reference types ='cypress'/>
 
-describe('The Title should be "UI Testing Site"', () => {
-    it('it should open docler home page', () => {
-        cy.visit('http://uitest.duodecadits.com');
-        cy.title().should('include', 'UI Testing Site');
-        cy.get('div').find('img').should('have.attr', 'id', 'dh_logo');
+describe('check for error page information"', () => {
+    const homePage = new HomePage_PO();
+    const errorPage = new ErrorPage_PO();
         
+    beforeEach(function(){
+         
+         homePage.visitHompage();
+                      
     });
 
-    it('The Company Logo should be visible on every site', () => {
-        cy.visit('http://uitest.duodecadits.com');
-        cy.title().should('include', 'UI Testing Site');
-        cy.get('div').find('img').should('have.attr', 'id', 'dh_logo');
-        
+    it('should verify title of error page', () => {
+        homePage.clickOn_Error_Tab();
+                
     });
 });

@@ -12,9 +12,12 @@ class FormPage_PO {
         cy.get('#site').click();
     }
 
-    check_for_inputField(){
+    check_for_inputField_input(){
         cy.get('#hello-input').should('have.id', 'hello-input');
     }
-    
+
+    click_submit(){
+        cy.get('#hello-submit').click();
+    }
 }
 export default FormPage_PO;

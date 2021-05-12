@@ -1,15 +1,24 @@
+/// <reference types ='cypress'/>
 import FormPage_PO from '../support/page-object/automation-test-store/FormPage-PO';
 import HomePage_PO from '../support/page-object/automation-test-store/HomePage-PO'
-/// <reference types ='cypress'/>
+
+
 
 describe('check form page information', () => {
+    
+    before(function () {
+        cy.fixture('example').then(function(data) {
+          globalThis.data = data;
+        });
+    });
+
     const homePage = new HomePage_PO();
     const formPage = new FormPage_PO();
     
     beforeEach(function(){
          
          homePage.visitHompage()
-             
+                     
     });
 
     it('should verify title of form page', () => {
@@ -24,7 +33,9 @@ describe('check form page information', () => {
 
     it('On the Form page, a form should be visible with one input box and one submit button', () => {
         formPage.clickOn_Form_Tab(); 
-        formPage.check_for_inputField();
+        formPage.check_for_inputField_input();
+        cy.get('#hello-input').type(data.name);
+        formPage.click_submit();
         homePage.check_logo();
     });
 

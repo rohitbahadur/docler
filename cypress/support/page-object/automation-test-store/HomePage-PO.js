@@ -29,5 +29,10 @@ class HomePage_PO {
         cy.get('div').find('img').should('have.attr', 'src', 'assets/img/dh_company_lux_doclerholding.jpg')
     }
 
+    clickOn_Error_Tab(){
+        cy.get('#error').click();
+        cy.get('h1').should('have.text', '404 Error: File not found :-(');
+    };
+
 }
 export default HomePage_PO;
