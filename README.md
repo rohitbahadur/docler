@@ -1,4 +1,4 @@
-# docler
+# Docler
 
 Docler automated web testing
 
