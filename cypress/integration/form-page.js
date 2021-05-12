@@ -12,17 +12,20 @@ describe('check form page information', () => {
              
     });
 
-    it('should open docler home page', () => {
+    it('should verify title of form page', () => {
         formPage.verifyTitle(); 
-    });
-
-    it('should verify title on form page', () => {
         formPage.clickOn_Form_Tab(); 
     });
 
     it('should verify title post click on UI Testing button', () => {
         formPage.click_On_UI_Testing_Button();
         formPage.verifyTitle();
+    });
+
+    it('On the Form page, a form should be visible with one input box and one submit button', () => {
+        formPage.clickOn_Form_Tab(); 
+        formPage.check_for_inputField();
+        homePage.check_logo();
     });
 
 });

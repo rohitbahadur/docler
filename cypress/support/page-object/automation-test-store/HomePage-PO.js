@@ -2,7 +2,6 @@ class HomePage_PO {
     visitHompage(){
 
         cy.visit(Cypress.env("baseUrl"));
-        //cy.visit('http://uitest.duodecadits.com')
     }
     
     verifyActive_Status(){
@@ -25,6 +24,10 @@ class HomePage_PO {
         cy.get('a#form').click();
         cy.contains('Simple Form Submission');
     };
+
+    check_logo(){
+        cy.get('div').find('img').should('have.attr', 'src', 'assets/img/dh_company_lux_doclerholding.jpg')
+    }
 
 }
 export default HomePage_PO;

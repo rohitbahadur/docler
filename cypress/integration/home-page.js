@@ -30,4 +30,8 @@ describe('check homepage information"', () => {
     it('should verify text (in p tag) "This site is dedicated to perform some exercises and demonstrate automated web testing', () => {
         homePage.verifyTextInPTag_To_Be_Equal_To();
     });
+
+    it('should verify for Docler logo', () => {
+        homePage.check_logo();
+    });
 });

@@ -11,5 +11,10 @@ class FormPage_PO {
     click_On_UI_Testing_Button(){
         cy.get('#site').click();
     }
+
+    check_for_inputField(){
+        cy.get('#hello-input').should('have.id', 'hello-input');
+    }
+    
 }
 export default FormPage_PO;
