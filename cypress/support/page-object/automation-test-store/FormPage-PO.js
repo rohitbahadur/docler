@@ -17,6 +17,7 @@ class FormPage_PO {
     }
 
     click_submit(){
+        cy.get('#hello-input').type(data.name);
         cy.get('#hello-submit').click();
     }
 }

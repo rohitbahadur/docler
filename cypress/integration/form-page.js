@@ -18,12 +18,12 @@ describe('check form page information', () => {
     beforeEach(function(){
          
          homePage.visitHompage()
-                     
+         formPage.clickOn_Form_Tab();            
     });
 
     it('should verify title of form page', () => {
         formPage.verifyTitle(); 
-        formPage.clickOn_Form_Tab(); 
+        
     });
 
     it('should verify title post click on UI Testing button', () => {
@@ -31,12 +31,19 @@ describe('check form page information', () => {
         formPage.verifyTitle();
     });
 
-    it('On the Form page, a form should be visible with one input box and one submit button', () => {
-        formPage.clickOn_Form_Tab(); 
+    it('should display form page with one input box and one submit button', () => {
+     
         formPage.check_for_inputField_input();
-        cy.get('#hello-input').type(data.name);
         formPage.click_submit();
         homePage.check_logo();
     });
 
+    it('should display logo of Docler', () => {
+        homePage.check_logo();
+    });
+    
+    it('should display the name entered on the form page input field post submit', () => {
+        formPage.click_submit();
+        
+    });
 });
